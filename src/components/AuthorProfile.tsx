@@ -18,7 +18,7 @@ export function AuthorProfile({ author }: AuthorProfileProps) {
           className="w-16 h-16 rounded-full object-cover"
         />
         <div>
-          <h3 className="font-bold text-lg">{author.name}</h3>
+          <h3 className="font-bold text-lg">{author.name} Sir</h3>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm">
             {author.bio}
           </p>

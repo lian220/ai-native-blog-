@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { AuthorProfile } from 'src/components/AuthorProfile'
+import { LikeButton } from 'src/components/LikeButton'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 
@@ -96,6 +97,9 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+      <div className="mt-8 flex items-center gap-4">
+        <LikeButton slug={slug} />
+      </div>
       <AuthorProfile
         author={{
           name: 'Author Name',

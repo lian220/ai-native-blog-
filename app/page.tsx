@@ -1,4 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
+import { NewsletterForm } from 'app/components/newsletter-form'
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <div className="my-8">
         <BlogPosts />
       </div>
+      <NewsletterForm />
     </section>
   )
 }

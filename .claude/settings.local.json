@@ -3,11 +3,9 @@
   "autoEditByDefault": true,
   "permissions": {
     "allow": [
-      "curl:*",
-      "pnpm dev:*",
-      "pnpm add:*",
-      "git add:*",
-      "git checkout:*",
+      "Curl:*",
+      "Pnpm dev:*",
+      "Git checkout:*",
       "Bash(pnpm build:*)",
       "Bash(git commit:*)",
       "Bash(gh label:*)",
@@ -27,7 +25,8 @@
       "mcp__atlassian__transitionJiraIssue",
       "mcp__atlassian__addWorklogToJiraIssue",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Add Claude Code agent configurations\n\nAdd custom agent configurations for code-refactorer, test-engineer, and tech-writer agents.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(pnpm add:*)",
+      "mcp__serena__list_dir"
     ]
   }
 }

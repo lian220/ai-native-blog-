@@ -28,7 +28,11 @@
       "WebFetch(domain:github.com)",
       "Bash(mkdir:*)",
       "Bash(git checkout:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "mcp__serena__activate_project",
+      "mcp__serena__get_symbols_overview",
+      "Bash(find:*)",
+      "Bash(cat:*)"
     ]
   },
   "alwaysThinkingEnabled": true,

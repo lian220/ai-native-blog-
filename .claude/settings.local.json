@@ -1,6 +1,4 @@
 {
-  "alwaysThinkingEnabled": true,
-  "autoEditByDefault": true,
   "permissions": {
     "allow": [
       "Curl:*",
@@ -26,7 +24,13 @@
       "mcp__atlassian__addWorklogToJiraIssue",
       "Bash(git add:*)",
       "Bash(pnpm add:*)",
-      "mcp__serena__list_dir"
+      "mcp__serena__list_dir",
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir:*)",
+      "Bash(git checkout:*)",
+      "Bash(git reset:*)"
     ]
-  }
+  },
+  "alwaysThinkingEnabled": true,
+  "autoEditByDefault": true
 }

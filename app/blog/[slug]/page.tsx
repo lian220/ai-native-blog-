@@ -2,7 +2,9 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { AuthorProfile } from 'src/components/AuthorProfile'
 import { LikeButton } from 'src/components/LikeButton'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { ViewCounter } from 'src/components/ViewCounter'
+import { ShareButtons } from 'src/components/ShareButtons'
+import { formatDate, getBlogPosts, calculateReadingTime } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -62,6 +64,8 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound()
   }
 
+  const readingTime = calculateReadingTime(post.content)
+
   return (
     <section>
       <script
@@ -90,15 +94,25 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+        <div className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
+          <p>{formatDate(post.metadata.publishedAt)}</p>
+          <span>•</span>
+          <p>{readingTime}분 읽기</p>
+          <span>•</span>
+          <ViewCounter slug={slug} trackView={true} />
+        </div>
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
-      <div className="mt-8 flex items-center gap-4">
-        <LikeButton slug={slug} />
+      <div className="mt-8 flex flex-col gap-4">
+        <div className="flex items-center gap-4">
+          <LikeButton slug={slug} />
+        </div>
+        <ShareButtons
+          url={`${baseUrl}/blog/${slug}`}
+          title={post.metadata.title}
+        />
       </div>
       <AuthorProfile
         author={{

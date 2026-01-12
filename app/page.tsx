@@ -1,5 +1,6 @@
 import { BlogPosts } from 'app/components/posts'
 import { NewsletterForm } from 'app/components/newsletter-form'
+import { getBlogPosts, formatDate } from 'app/blog/utils'
 import {
   AnimeBackground,
   TypingText,
@@ -10,6 +11,17 @@ import {
 } from 'app/components/anime-elements'
 
 export default function Page() {
+  const allPosts = getBlogPosts()
+
+  const posts = allPosts.map((post) => ({
+    slug: post.slug,
+    title: post.metadata.title,
+    publishedAt: post.metadata.publishedAt,
+    formattedDate: formatDate(post.metadata.publishedAt, false),
+    summary: post.metadata.summary,
+    content: post.content,
+  }))
+
   return (
     <section className="relative">
       <AnimeBackground />
@@ -40,7 +52,7 @@ export default function Page() {
           <span aria-label="memo"><BouncingEmoji emoji="📝" delay={0.1} /></span>
           <span>Latest Posts</span>
         </h2>
-        <BlogPosts />
+        <BlogPosts posts={posts} />
       </div>
 
       <div className="animate-fade-in-up animation-delay-500">

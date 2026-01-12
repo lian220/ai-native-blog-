@@ -327,3 +327,22 @@ table {
 .animation-delay-500 {
   animation-delay: 0.5s;
 }
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-twinkle,
+  .animate-float,
+  .animate-bounce-custom,
+  .animate-gradient-xy,
+  .animate-particle,
+  .animate-neon-pink,
+  .animate-neon-blue,
+  .animate-neon-green,
+  .animate-neon-purple,
+  .animate-shimmer,
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

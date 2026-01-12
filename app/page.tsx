@@ -17,9 +17,9 @@ export default function Page() {
 
       <div className="animate-fade-in-up">
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter flex items-center gap-2">
-          <BouncingEmoji emoji="✨" delay={0} />
+          <span aria-label="sparkles"><BouncingEmoji emoji="✨" delay={0} /></span>
           <NeonText color="purple">My Portfolio</NeonText>
-          <BouncingEmoji emoji="🚀" delay={0.2} />
+          <span aria-label="rocket"><BouncingEmoji emoji="🚀" delay={0.2} /></span>
         </h1>
       </div>
 
@@ -37,7 +37,7 @@ export default function Page() {
 
       <div className="my-8 animate-fade-in-up animation-delay-300">
         <h2 className="text-lg font-medium mb-4 flex items-center gap-2">
-          <BouncingEmoji emoji="📝" delay={0.1} />
+          <span aria-label="memo"><BouncingEmoji emoji="📝" delay={0.1} /></span>
           <span>Latest Posts</span>
         </h2>
         <BlogPosts />
@@ -46,7 +46,7 @@ export default function Page() {
       <div className="animate-fade-in-up animation-delay-500">
         <GradientCard>
           <h3 className="text-lg font-medium mb-2 flex items-center gap-2">
-            <BouncingEmoji emoji="💌" delay={0.3} />
+            <span aria-label="love letter"><BouncingEmoji emoji="💌" delay={0.3} /></span>
             <NeonText color="blue">Subscribe to Newsletter</NeonText>
           </h3>
           <NewsletterForm />

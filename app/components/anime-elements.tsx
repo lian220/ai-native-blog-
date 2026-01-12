@@ -106,6 +106,7 @@ export function TypingText({
   const [showCursor, setShowCursor] = useState(true)
 
   useEffect(() => {
+    setDisplayText('') // 초기화: text가 변경될 때마다 displayText를 리셋
     let index = 0
     const timer = setInterval(() => {
       if (index <= text.length) {
@@ -197,7 +198,7 @@ export function AnimeBackground() {
   ]
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
       {stars.map((star, i) => (
         <SparkingStar key={`star-${i}`} {...star} />
       ))}
@@ -241,7 +242,7 @@ export function Particles() {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
       {particles.map((particle) => (
         <div
           key={particle.id}

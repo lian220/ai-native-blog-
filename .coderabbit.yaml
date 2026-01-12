@@ -1,0 +1,104 @@
+# CodeRabbit Pro Configuration
+# This file configures CodeRabbit AI code review for your repository
+
+# Enable Pro features
+enable_pro_features: true
+
+# Language settings
+language:
+  - typescript
+  - javascript
+  - tsx
+  - jsx
+  - markdown
+  - yaml
+  - json
+
+# Review settings
+review:
+  # Enable comprehensive reviews
+  comprehensive_review: true
+  
+  # Review depth (shallow, default, deep)
+  depth: deep
+  
+  # Enable security review
+  security_review: true
+  
+  # Enable performance review
+  performance_review: true
+  
+  # Enable best practices review
+  best_practices_review: true
+
+# Paths to include/exclude
+paths:
+  include:
+    - "app/**/*"
+    - "src/**/*"
+  exclude:
+    - "node_modules/**"
+    - ".next/**"
+    - ".git/**"
+    - "dist/**"
+    - "build/**"
+
+# PR settings
+pull_request:
+  # Auto-review on PR creation
+  auto_review: true
+  
+  # Review on every commit
+  review_on_commit: true
+  
+  # Minimum review confidence threshold (0-1)
+  min_confidence: 0.7
+
+# Code quality settings
+quality:
+  # Enable code quality checks
+  enabled: true
+  
+  # Check for code smells
+  code_smells: true
+  
+  # Check for potential bugs
+  potential_bugs: true
+  
+  # Check for security vulnerabilities
+  security_issues: true
+
+# Suggestions settings
+suggestions:
+  # Enable inline suggestions
+  inline_suggestions: true
+  
+  # Enable one-click fixes
+  one_click_fixes: true
+  
+  # Suggest improvements
+  improvements: true
+
+# Documentation settings
+documentation:
+  # Generate documentation suggestions
+  generate_docs: true
+  
+  # Review existing documentation
+  review_docs: true
+
+# Integration settings
+integrations:
+  # Enable Jira integration (if configured)
+  jira: false
+  
+  # Enable Linear integration (if configured)
+  linear: false
+
+# Notification settings
+notifications:
+  # Notify on critical issues
+  critical_issues: true
+  
+  # Notify on security vulnerabilities
+  security_alerts: true
